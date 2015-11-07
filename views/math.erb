@@ -1,0 +1,25 @@
+<p>数学のお勉強をしましょう。</p>
+
+
+
+<p>問題です。</p></br>
+<% i = rand(1..3) %>
+<form action="/math"  method="post">
+<% case i %>
+  <% when 1 %>
+    <%= @q1 %>
+    <%= '<input type="hidden" name="check"  value="yes" >' %>
+  <% when 2 %>
+    <%= @q2 %>
+    <%= '<input type="hidden" name="check"  value="no" >' %>
+  <% when 3 %>
+    <%= @q3 %>
+    <%= '<input type="hidden" name="check"  value="yes" >' %>
+  <% end %>
+
+</br>
+  <input type="submit"  name="answer" value="yes">
+  <input type="submit" name= "answer" value="no">
+</form>
+
+<%= @print %>
